@@ -1,6 +1,6 @@
 package com.devspace.taskbeats
 
-val categories = listOf(
+/*val categories = listOf(
     CategoryUiData(
         name = "ALL",
         isSelected = false
@@ -73,4 +73,4 @@ val tasks = listOf(
         "Soltar reels da semana",
         "WORK"
     ),
-)
+)*/
