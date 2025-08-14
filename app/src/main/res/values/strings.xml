@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">TaskBeats</string>
     <string name="home_title">Task Beat</string>
+    <string name="create_task_title">Create task</string>
+    <string name="btn_create">Create</string>
+    <string name="update_task_title">Update task</string>
+    <string name="btn_update">Update</string>
+    <string name="create_category">Create category</string>
+    <string name="task_name_e_g_study_android">Task name: e.g: Study Android</string>
+    <string name="delete">Delete</string>
 </resources>

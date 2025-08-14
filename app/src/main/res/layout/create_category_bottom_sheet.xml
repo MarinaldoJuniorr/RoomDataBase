@@ -11,7 +11,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Create category"
+        android:text="@string/create_category"
         android:textSize="24sp"
         android:textStyle="bold" />
 
