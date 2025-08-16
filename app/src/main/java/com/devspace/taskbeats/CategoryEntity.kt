@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class CategoryEntity (
+data class CategoryEntity(
     @PrimaryKey
     @ColumnInfo("Key")
     val name: String,

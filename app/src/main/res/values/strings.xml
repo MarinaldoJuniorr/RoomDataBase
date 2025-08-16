@@ -8,4 +8,6 @@
     <string name="create_category">Create category</string>
     <string name="task_name_e_g_study_android">Task name: e.g: Study Android</string>
     <string name="delete">Delete</string>
-</resources>
+    <string name="title_category_delete">Important</string>
+    <string name="description_category_delete">By deleting a category you will delete all tasks with this category, are you sure?</string>
+    </resources>

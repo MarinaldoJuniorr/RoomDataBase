@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class TaskListAdapter :
     ListAdapter<TaskUiData, TaskListAdapter.TaskViewHolder>(TaskListAdapter) {
 
-        private lateinit var callback: (TaskUiData) -> Unit
+    private lateinit var callback: (TaskUiData) -> Unit
 
     fun setOnClickListener(onClick: (TaskUiData) -> Unit) {
         callback = onClick

@@ -72,10 +72,10 @@ class CreateOrUpdateTaskBottomSheet(
         }
 
         btnDelete.setOnClickListener {
-            if(task != null){
+            if (task != null) {
                 onDeleteClicked.invoke(task)
                 dismiss()
-            } else{
+            } else {
                 Log.d("CreateOrUpdateTaskBottomSheet", "Task not found")
             }
         }
@@ -84,26 +84,23 @@ class CreateOrUpdateTaskBottomSheet(
             val name = tieTaskName.text.toString().trim()
             if (taskCategory != null && name.isNotEmpty()) {
 
-                if(task == null) {
+                if (task == null) {
                     onCreateClicked.invoke(
                         TaskUiData(
-                            id = 0,
-                            name = name,
-                            category = requireNotNull(taskCategory)
+                            id = 0, name = name, category = requireNotNull(taskCategory)
                         )
                     )
                 } else {
                     onUpdateClicked.invoke(
                         TaskUiData(
-                            id = task.id,
-                            name = name,
-                            category = requireNotNull(taskCategory)
+                            id = task.id, name = name, category = requireNotNull(taskCategory)
                         )
                     )
                 }
                 dismiss()
             } else {
-                Snackbar.make(btnCreateOrUpdate, "Please select a category", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(btnCreateOrUpdate, "Please select a category", Snackbar.LENGTH_LONG)
+                    .show()
             }
         }
         return view
