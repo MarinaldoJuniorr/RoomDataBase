@@ -16,12 +16,11 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class CreateOrUpdateTaskBottomSheet(
-    private val categoryList: List<CategoryUiData>,
+    private val categoryList: List<CategoryEntity>,
     private val task: TaskUiData? = null,
     private val onCreateClicked: (TaskUiData) -> Unit,
     private val onUpdateClicked: (TaskUiData) -> Unit,
     private val onDeleteClicked: (TaskUiData) -> Unit
-
 ) : BottomSheetDialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -32,8 +31,13 @@ class CreateOrUpdateTaskBottomSheet(
         val btnDelete = view.findViewById<Button>(R.id.btn_task_delete)
         val tieTaskName = view.findViewById<TextInputEditText>(R.id.tie_task_name)
         val spinner: Spinner = view.findViewById(R.id.sp_category_list)
+
         var taskCategory: String? = null
-        val categoryStr: List<String> = categoryList.map { it.name }
+        val categoryListTemp = mutableListOf("Select")
+        categoryListTemp.addAll(
+            categoryList.map { it.name }
+        )
+        val categoryStr: List<String> = categoryListTemp
 
         ArrayAdapter(
             requireActivity().baseContext,
@@ -82,7 +86,7 @@ class CreateOrUpdateTaskBottomSheet(
 
         btnCreateOrUpdate.setOnClickListener {
             val name = tieTaskName.text.toString().trim()
-            if (taskCategory != null && name.isNotEmpty()) {
+            if (taskCategory != "Select" && name.isNotEmpty()) {
 
                 if (task == null) {
                     onCreateClicked.invoke(
